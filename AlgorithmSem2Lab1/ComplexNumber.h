@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <iostream>
 class ComplexNumber {
 private:
 	int re;
@@ -18,7 +19,7 @@ public:
 		return sqrt(re * re + im * im);
 	}
 	int moduloInt() {
-		return floor(this->modulo());
+		return (int) floor(this->modulo());
 	}
 	bool isGreaterThan(ComplexNumber other) {
 		double modulo1 = this->modulo();
@@ -33,5 +34,29 @@ public:
 	}
 	int imaginary() {
 		return im;
+	}
+	bool isZero() {
+		return im == 0 && re == 0;
+	}
+	void print() {
+		if (isZero()) {
+			std::cout << '0';
+			return;
+		}
+		if (re != 0)
+			std::cout << re;
+		if (im != 0) {
+			if (re!=0 && im > 0) {
+				std::cout << "+";
+			}
+			std::cout << im << "*i";
+		}
+	}
+	void printn() {
+		print();
+		std::cout << std::endl;
+	}
+	void prints() {
+		std::cout << re << " " << im << std::endl;
 	}
 };
