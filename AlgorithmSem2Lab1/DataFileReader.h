@@ -55,24 +55,10 @@ private:
 			{
 			case 'i': readingIm = true; break;
 			case '+':
-				if (readingIm) {
-					im = temp;
-				}
-				else {
-					re = temp;
-				}
-				temp.clear();
-				readingIm = false;
+				setStrings(readingIm, temp, re, im);
 				break;
 			case '-':
-				if (readingIm) {
-					im = temp;
-				}
-				else {
-					re = temp;
-				}
-				temp.clear();
-				readingIm = false;
+				setStrings(readingIm, temp, re, im);
 				temp += c;
 				break;
 			default:
@@ -81,7 +67,22 @@ private:
 				break;
 			}
 		}
+		setStrings(readingIm, temp, re, im);
+		if (re.empty())
+			re = "0";
+		if (im.empty())
+			im = "0";
 		return re + " " + im;
+	}
+	void setStrings(bool& isImaginary, std::string& temp, std::string& re, std::string& im) {
+		if (isImaginary) {
+			im = temp.empty() ? "1" : temp;
+		}
+		else {
+			re = temp;
+		}
+		temp.clear();
+		isImaginary = false;
 	}
 
 public:
