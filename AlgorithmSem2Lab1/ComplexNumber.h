@@ -56,7 +56,7 @@ public:
 		print();
 		std::cout << std::endl;
 	}
-	void prints() {
+	void printT() {
 		std::cout << re << "\t" << im << std::endl;
 	}
 };
