@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="ComplexNumber.h" />
     <ClInclude Include="DataFileReader.h" />
+    <ClInclude Include="HashTable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
