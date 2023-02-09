@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="ComplexNumber.h" />
     <ClInclude Include="DataFileReader.h" />
+    <ClInclude Include="Hasher.h" />
     <ClInclude Include="HashTable.h" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="sample.txt" />
+    <Text Include="input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
